@@ -1,0 +1,26 @@
+<script type="text/javascript">
+    RED.nodes.registerType('power-to-state',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+        },
+        inputs:1,
+        outputs:1,
+        icon: "function.svg",
+        label: function() {
+            return this.name||"power to state";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="power-to-state">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="power-to-state">
+    <p>A node that detects state by power consumption.</p>
+</script>

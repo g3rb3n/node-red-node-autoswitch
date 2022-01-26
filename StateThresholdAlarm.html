@@ -1,0 +1,41 @@
+<script type="text/javascript">
+    RED.nodes.registerType('StateThresholdAlarm',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            thresholdSeconds: {
+                value:60,
+                validate:RED.validators.number()
+            },
+            onState: {
+                value:true,
+            },
+        },
+        inputs:1,
+        outputs:1,
+        icon: "function.svg",
+        label: function() {
+            return this.name || "Max " + this.onState + " for " + this.thresholdSeconds;
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="StateThresholdAlarm">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-thresholdSeconds"><i class="fa fa-tag"></i> Threshold seconds</label>
+        <input type="text" id="node-input-thresholdSeconds" placeholder="Seconds">
+    </div>
+    <div class="form-row">
+        <label for="node-input-onState"><i class="fa fa-tag"></i> On State</label>
+        <input type="checkbox" id="node-input-onState">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="StateThresholdAlarm">
+    <p>A node that sets alarm when its input has a certain value for too long.</p>
+</script>

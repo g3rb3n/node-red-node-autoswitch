@@ -1,0 +1,16 @@
+{
+  "name": "node-red-node-autoswitch",
+  "node-red": {
+    "nodes": {
+        "autoswitch": "autoswitch.js",
+        "power-to-state": "power-to-state.js"
+    }
+  },
+  "optionalDependencies": {},
+  "readme": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/g3rb3n/node-red-node-autoswitch/"
+  },
+  "version": "0.0.1"
+}
